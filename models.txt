@@ -1,0 +1,5 @@
+iPhone13,2
+iPhone8,1
+iPhone11,8
+iPad5,4
+iPad7,12
