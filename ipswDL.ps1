@@ -3,11 +3,11 @@ if (Test-Path $idpath) {
     $identifiers = Get-Content $idpath
 }Else{
     Write-Output "Please create models.txt and add a model identifier in each line."
-    pause
     exit
 }
 foreach ($identifier in $identifiers) {
 $url = 'https://api.ipsw.me/v4/device/' + $identifier + '?type=ipsw'
+$ProgressPreference = 'SilentlyContinue'
 $response = Invoke-WebRequest -Uri $url -UseBasicParsing
 $models = $response | ConvertFrom-Json
 $firmwares = $models | Select-Object -ExpandProperty firmwares
